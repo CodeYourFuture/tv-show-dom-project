@@ -1,2 +1,3 @@
 # tv-show-dom-project
-Starting point for 
+
+A starting point for CYF's TV show DOM project
