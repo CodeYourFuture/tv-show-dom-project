@@ -5,8 +5,8 @@ function setup() {
 }
 
 function makePageForEpisodes(episodeList) {
-  document.getElementById("episodesDisplay").textContent =
-    "Show your episodes here!";
+  const displayElem = document.getElementById("episodesDisplay");
+  displayElem.textContent = `Got ${episodeList.length} episode(s)`;
 }
 
 window.onload = setup;
