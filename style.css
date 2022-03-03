@@ -1,3 +1,41 @@
 #root {
-  color: red;
-}
+  margin-top: 10px;
+   
+ }
+ .episode-container {
+   display: flex;
+   flex-wrap: wrap;
+   justify-content: space-around;
+ 
+ }
+ 
+ .episode-card {
+   background-color: antiquewhite;
+   border: 4px solid burlywood;
+   width: 20%;
+   height: auto;
+   min-width: 300px;
+   padding: 0px 10px 10px 10px;
+   border-radius: 5px;
+   margin: 20px;
+   text-align: center;
+ }
+ 
+ .search-div{
+   display: flex;
+ }
+ 
+ input, .home-btn {
+   padding: 10px;
+   margin: 10px 10px 10px 32px;
+ }
+ 
+ select{
+   padding: 10px;
+   margin: 10px 10px 10px 32px;
+ }
+ 
+ .search-counter{
+   font-size: larger;
+ }
+ 
