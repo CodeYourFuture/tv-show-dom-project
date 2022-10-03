@@ -1,3 +1,24 @@
-#root {
-  color: red;
+.container {
+  max-width: 1200px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  justify-content: center;
+  margin: auto;
 }
+
+.episode-container {
+  max-width: 300px;
+  border: 1px solid red;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.episode-name {
+  max-width: 250px;
+  border: 1px solid green;
+  margin: 0 auto;
+  font-size: 16px;
+}
+
