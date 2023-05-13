@@ -1,3 +1,32 @@
 #root {
   color: red;
+  display: flex;
+  flex-direction: column;
 }
+
+.banner{
+  background-color: #3c2f4e;
+  color: #fff;
+  text-align: center;
+  padding: 31px 0px;
+}
+
+.nav-Banner{
+
+}
+
+/* ------------------------------- */
+.seasonDiv{
+  
+}
+
+
+
+/* ------------------------------- */
+
+footer{
+  color: black;
+  display: flex;
+  justify-content: center;
+}
+
