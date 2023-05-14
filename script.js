@@ -19,15 +19,40 @@ function makePageForEpisodes(episodeList) {
 
 function allSeasonDiv(parentElem, episodeList){
 
-  const seasonContainer = document.createElement("div")
-  const seasonContainerHeader = document.createElement("h1")
-  const seasonContainerImage = document.createElement("img")
-  seasonContainerHeader.textContent = episodeList[0].name
-  seasonContainerImage.src = episodeList[0].image.medium
+  const episodeContainerMainDiv = document.createElement("div")
+  episodeContainerMainDiv.classList.add("episode-Container-MainDiv")
+  
+  
 
-  seasonContainer.appendChild(seasonContainerHeader )
-  seasonContainer.appendChild(seasonContainerImage )
-  parentElem.appendChild(seasonContainer)
+  const episodeListContainer = episodeList.map((episode) => {
+
+    //div 
+    const episodeContainer = document.createElement("div");
+    episodeContainer.classList.add("episode-container");
+
+    //h1
+    const episodeName = document.createElement("h1")
+    episodeName.textContent = episode.name;
+    episodeContainer.appendChild(episodeName)
+    //img
+    const episodeimage = document.createElement("img")
+    episodeimage.src = episode.image.medium;
+    episodeContainer.appendChild(episodeimage)
+    //decription
+    const episodeSummary = document.createElement("p")
+    episodeSummary.textContent = episode.summary
+    episodeContainer.appendChild(episodeSummary)
+
+    return episodeContainer
+  }) 
+
+
+
+  episodeListContainer.forEach((episodeContainer) => {
+    episodeContainerMainDiv.appendChild(episodeContainer)
+  })
+
+  parentElem.appendChild(episodeContainerMainDiv)
 }
 
 
