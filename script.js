@@ -13,48 +13,53 @@ function makePageForEpisodes(episodeList) {
   rootElem.appendChild(mainElem);
 
   createNav(rootElem)
-  allSeasonDiv(rootElem, episodeList)
+  allEpisodesDiv(rootElem, episodeList)
   createFooter(rootElem)
 }
 
-function allSeasonDiv(parentElem, episodeList){
+function allEpisodesDiv(parentElem, episodeList) {
+  const episodesContainer = document.createElement("div");
+  episodesContainer.classList.add("episode-Container-MainDiv");
 
-  const episodeContainerMainDiv = document.createElement("div")
-  episodeContainerMainDiv.classList.add("episode-Container-MainDiv")
-  
-  
-
-  const episodeListContainer = episodeList.map((episode) => {
-
-    //div 
+  episodeList.forEach((episode) => {
     const episodeContainer = document.createElement("div");
     episodeContainer.classList.add("episode-container");
 
-    //h1
-    const episodeName = document.createElement("h1")
-    episodeName.textContent = episode.name;
-    episodeContainer.appendChild(episodeName)
-    //img
-    const episodeimage = document.createElement("img")
-    episodeimage.src = episode.image.medium;
-    episodeContainer.appendChild(episodeimage)
-    //decription
-    const episodeSummary = document.createElement("p")
-    episodeSummary.textContent = episode.summary
-    episodeContainer.appendChild(episodeSummary)
+    const episodeCode = getEpisodeCode(episode.season, episode.number);
 
-    return episodeContainer
-  }) 
+    const episodeCodeElem = document.createElement("p");
+    episodeCodeElem.textContent = episodeCode;
+    episodeContainer.appendChild(episodeCodeElem);
 
+    const episodeNameElem = document.createElement("h2");
+    episodeNameElem.textContent = episode.name;
+    episodeContainer.appendChild(episodeNameElem);
 
+    const episodeImageElem = document.createElement("img");
+    episodeImageElem.src = episode.image.medium;
+    episodeImageElem.alt = episode.name;
+    episodeContainer.appendChild(episodeImageElem);
 
-  episodeListContainer.forEach((episodeContainer) => {
-    episodeContainerMainDiv.appendChild(episodeContainer)
-  })
+    const episodeSummaryElem = document.createElement("p");
+    episodeSummaryElem.innerHTML = episode.summary;
+    episodeContainer.appendChild(episodeSummaryElem);
 
-  parentElem.appendChild(episodeContainerMainDiv)
+    const episodeLinkElem = document.createElement("a");
+    episodeLinkElem.href = episode.url;
+    episodeLinkElem.textContent = "More info on TVMaze.com";
+    episodeContainer.appendChild(episodeLinkElem);
+
+    episodesContainer.appendChild(episodeContainer);
+  });
+
+  parentElem.appendChild(episodesContainer);
 }
 
+function getEpisodeCode(season, episode) {
+  const seasonCode = String(season).padStart(2, "0");
+  const episodeCode = String(episode).padStart(2, "0");
+  return `S${seasonCode}E${episodeCode}`;
+}
 
 
 function createHeader(parentElem){
