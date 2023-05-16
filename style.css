@@ -1,3 +1,74 @@
+/* CSS */
+
+/* Overall layout */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: Arial, sans-serif;
+}
+
 #root {
-  color: red;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Header */
+header {
+  background-color: #39223e;
+  color: #fff;
+  padding: 31px;
+  text-align: center;
+  width: 105%;
+  height: 34px;
+
+}
+
+/* Main content */
+main {
+  margin: 20px 0;
+}
+
+.episode-container {
+  flex-basis: 25%;
+  padding: 10px;
+  box-sizing: border-box;
+  text-align: center;
+  width: 40rem;
+}
+
+.episode-container h1 {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.episode-container img {
+  width: 78%;
+  height: auto;
+  margin-bottom: 10px;
+}
+
+.episode-container p {
+  font-size: 14px;
+}
+
+.episode-Container-MainDiv{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  background-color: #f3f3f3;
+  margin: 12px 0px;
+}
+
+.matched-count {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+/* Footer */
+footer {
+  background-color: #333;
+  color: #fff;
+  padding: 20px;
+  text-align: center;
 }
